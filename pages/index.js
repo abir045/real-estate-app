@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import { baseUrl, fetchApi } from "../utils/fetchApi";
 import Property from "../components/Property";
+import Navbar from "../components/Navbar";
 
 const Banner = ({
   purpose,
@@ -34,6 +35,7 @@ const Banner = ({
 );
 
 export default function Home({ propertiesForSale, propertiesForRent }) {
+  console.log(propertiesForRent);
   return (
     <Box>
       <Banner

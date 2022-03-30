@@ -33,6 +33,7 @@ const Property = ({
         justifyContent="flex-start"
         cursor="pointer"
       >
+        {/* box for image */}
         <Box>
           <Image
             src={coverPhoto ? coverPhoto.url : DefaultImage}
@@ -48,14 +49,34 @@ const Property = ({
             justifyContent="space-between"
           >
             <Flex alignItems="center">
+              {/* box for is verified  */}
               <Box paddingRight="3" color="green.400">
                 {isVerified && <GoVerified />}
               </Box>
+              {/* price and rent frequency */}
               <Text fontWeight="bold" fontSize="lg">
                 AED {millify(price)} {rentFrequency && `/${rentFrequency}`}
               </Text>
             </Flex>
+            {/* box for agency logo */}
+            <Box>
+              <Avatar size="sm" src={agency?.logo?.url} />
+            </Box>
           </Flex>
+          {/* Flex for room details and etc */}
+          <Flex
+            alignItems="center"
+            p="1"
+            justifyContent="space-between"
+            w="250px"
+            color="blue.400"
+          >
+            {rooms} <FaBed /> | {baths} <FaBath /> | {millify(area)} sqft{" "}
+            <BsGridFill />
+          </Flex>
+          <Text>
+            {title.length > 30 ? `${title.substring(0, 30)}...` : title}
+          </Text>
         </Box>
       </Flex>
     </Link>
